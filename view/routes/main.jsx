@@ -8,6 +8,7 @@ import {
     Switch,
   } from 'react-router-dom';
 import Home from './home/home.jsx'
+import Test from './test/Test.jsx'
 class Main extends Component{
     render(){
         return(
@@ -17,12 +18,13 @@ class Main extends Component{
 
                  
                     <li><Link to="/">Homes</Link></li>
-                    <li><Link to="/test">Category</Link></li>
-                    <li><Link to="/products">Products</Link></li>
+                    <li><Link to="/registration">Registration</Link></li>
+                    <li><Link to="/test">test</Link></li>
 
                   </ul>
                  </nav>
-                     <Route path="/registration" component={Home}/></div>
+                     <Route path="/registration" component={Home}/>
+                    <Route path="/test" component={Test}/></div>
         		
         	);
        
