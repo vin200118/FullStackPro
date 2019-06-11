@@ -7,8 +7,10 @@ import {
     Route,
     Switch,
   } from 'react-router-dom';
-import Home from './home/home.jsx'
+/*import Home from './home/home.jsx'*/
 import Test from './test/Test.jsx'
+/*import Test1 from './test/Test1.jsx'*/
+import AgGridReactDemo from './home/AgGridReactDemo.jsx'
 class Main extends Component{
     render(){
         return(
@@ -18,14 +20,17 @@ class Main extends Component{
 
                  
                     <li><Link to="/">Homes</Link></li>
-                    <li><Link to="/registration">Registration</Link></li>
+                   
                     <li><Link to="/test">test</Link></li>
+                  
 
                   </ul>
                  </nav>
-                     <Route path="/registration" component={Home}/>
-                    <Route path="/test" component={Test}/></div>
-        		
+                 <Route path="/" component={AgGridReactDemo}/>
+                     
+                    <Route path="/test" component={Test}/>
+                    
+        		</div>
         	);
        
     }

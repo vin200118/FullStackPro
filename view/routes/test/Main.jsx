@@ -1,12 +1,12 @@
 import React from "react"
 class Main extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
     }
     
     render(){
         return(
-                <button onClick={()=> this.props.changeUserName("Aayush")}>Change Name</button>
+                <button onClick={()=> this.props.changeUserName("Aayush 118")}>Change Name</button>
         );
     }
 }

@@ -1,27 +1,31 @@
 import React from "react";
 import Main from "./Main.jsx";
 import User from "./User.jsx";
+import {connect} from 'react-redux';
+import {setName} from '../../action/userAction.jsx'
  class Test extends React.Component{
-    constructor(){
-        super();
-        this.state={
-                username:"Vinayak"
-        };
-    }
-    
-    changeUserName(newName){
-        this.setState({
-            username:newName
-        });
-    }
+  
     render(){
         return(
                 <div className="container">
-                <Main changeUserName={this.changeUserName.bind(this)}/>
-                <User username={this.state.username}/>
+                <Main changeUserName={(name) => this.props.setName(name)}/>
+                <User username={this.props.user.name}/>
                 </div>
                 );
     }
 }
 
-export default Test;
+const mapStateToProps = (state) =>{
+    return {
+        user:state.user
+    };
+};
+
+const mapDispatchToProps = (dispatch)=>{
+    return {
+        setName:(name)=>{
+            dispatch(setName(name));
+        }
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Test);
