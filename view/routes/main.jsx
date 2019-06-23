@@ -7,9 +7,9 @@ import {
     Route,
     Switch,
   } from 'react-router-dom';
-/*import Home from './home/home.jsx'*/
+
 import Test from './test/Test.jsx'
-/*import Test1 from './test/Test1.jsx'*/
+
 import AgGridReactDemo from './home/AgGridReactDemo.jsx'
 class Main extends Component{
     render(){

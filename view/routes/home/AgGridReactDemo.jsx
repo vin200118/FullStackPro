@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import { AgGridReact } from 'ag-grid-react';
-import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-balham.css';
+import '../../style/ag-grid.css';
+import '../../style/ag-theme-balham.css';
+
 
 class AgGridReactDemo extends Component{
     constructor(props) {
         super(props);
         this.state = {
+                name:"vinayak",
           columnDefs: [{
             headerName: "Make", field: "make"
           }, {
@@ -22,23 +24,20 @@ class AgGridReactDemo extends Component{
           }, {
             make: "Porsche", model: "Boxter", price: 72000
           }]
-        }
+        };
       }
 
       render() {
+         
         return (
-          <div 
-            className="ag-theme-balham"
-            style={{ 
-            height: '500px', 
-            width: '600px',
-            marginLeft: '203px'}} 
-          >
-            <AgGridReact
-              columnDefs={this.state.columnDefs}
-              rowData={this.state.rowData}>
-            </AgGridReact>
-          </div>
+<div>
+
+               sdfdsfsdf <input type="text" value="abcccc"></input>
+               
+         </div>
+              
+               
+                       
         );
       }
     }
