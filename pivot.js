@@ -119,10 +119,13 @@
               sum: 0,
               push: function(record) {
                 if (!isNaN(parseFloat(record[attr]))) {
-                  return this.sum += parseFloat(record[attr]);
+                	console.log(parseFloat(record[attr]));
+                	this.sum += parseFloat(record[attr]);
+                  return this.sum ;
                 }
               },
               value: function() {
+            	  console.log("value "+this.sum);
                 return this.sum;
               },
               format: formatter,
@@ -131,6 +134,33 @@
           };
         };
       },
+      difference: function(formatter) {
+          if (formatter == null) {
+            formatter = usFmt;
+          }
+          return function(arg) {
+            var attr;
+            attr = arg[0];
+            return function(data, rowKey, colKey) {
+              return {
+                sum: 0,
+                push: function(record) {
+                  if (!isNaN(parseFloat(record[attr]))) {
+                  	console.log(parseFloat(record[attr]));
+                  	this.sum = parseFloat(record[attr]);
+                    return this.sum ;
+                  }
+                },
+                value: function() {
+              	  console.log("value "+this.sum);
+                  return this.sum;
+                },
+                format: formatter,
+                numInputs: attr != null ? 0 : 1
+              };
+            };
+          };
+        },
       extremes: function(mode, formatter) {
         if (formatter == null) {
           formatter = usFmt;
@@ -402,6 +432,7 @@
         "Count Unique Values": tpl.countUnique(usFmtInt),
         "List Unique Values": tpl.listUnique(", "),
         "Sum": tpl.sum(usFmt),
+        "Difference": tpl.difference(usFmt),
         "Integer Sum": tpl.sum(usFmtInt),
         "Average": tpl.average(usFmt),
         "Median": tpl.median(usFmt),
