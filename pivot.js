@@ -147,7 +147,7 @@
                 push: function(record) {
                   if (!isNaN(parseFloat(record[attr]))) {
                   	console.log(parseFloat(record[attr]));
-                  	this.sum = parseFloat(record[attr]);
+                  	this.sum = parseFloat(record[attr])-this.sum;
                     return this.sum ;
                   }
                 },
